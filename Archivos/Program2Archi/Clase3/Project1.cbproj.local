@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2023/07/15 17:19:32.000.173,=C:\Users\Usuario\Documentos\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2023/07/15 17:19:34.000.808,=C:\Users\Usuario\Documentos\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2023/07/16 13:30:26.000.999,=C:\Users\Usuario\Documentos\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2023/07/16 13:30:29.000.886,=C:\Users\Usuario\Documentos\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2023/07/16 14:08:57.000.997,C:\Users\Usuario\Documentos\Embarcadero\Studio\Projects\Unit1.cpp=D:\Program2Archi\Clase3\Unit1.cpp</Transaction>
+    <Transaction>2023/07/16 14:08:57.000.997,C:\Users\Usuario\Documentos\Embarcadero\Studio\Projects\Unit1.h=D:\Program2Archi\Clase3\Unit1.h</Transaction>
+    <Transaction>2023/07/16 14:08:57.000.997,C:\Users\Usuario\Documentos\Embarcadero\Studio\Projects\Unit1.dfm=D:\Program2Archi\Clase3\Unit1.dfm</Transaction>
+    <Transaction>2023/07/16 14:09:07.000.306,C:\Users\Usuario\Documentos\Embarcadero\Studio\Projects\Project1PCH1.h=D:\Program2Archi\Clase3\archi3.h</Transaction>
+    <Transaction>2023/07/16 14:11:30.000.977,C:\Users\Usuario\Documentos\Embarcadero\Studio\Projects\Project1.cbproj=D:\Program2Archi\Clase3\Project1.cbproj</Transaction>
+  </Transactions>
+</BorlandProject>

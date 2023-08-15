@@ -1,0 +1,84 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "Unit1.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TForm1 *Form1;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+	: TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+ void  IsRamiro(AnsiString cadena, ofstream  &fo )
+{
+  AnsiString m="María José";
+  if(cadena=="Ramiro")
+  {
+	 for (int i = 1; i <=10;i++) {
+		 fo.put(m[i]);
+	 }
+  }
+  else
+  {
+	 for (int i = 1; i <=6;i++) {
+		 fo.put(cadena[i]);
+	 }
+  }
+  fo.put('x');
+}
+
+void CambiarCadena(AnsiString nomArch)
+{
+	 AnsiString s="María Jesús";
+	 AnsiString s2;;
+	 char x;
+	 ifstream fi(nomArch.c_str());
+	 ofstream fo("temporal.tmp");
+	 if(!fi.fail())
+	 {
+		 while(!fi.eof())
+		 {
+				  s2="";
+				  x=fi.get();
+				  while(x!=' '&&x!=10)
+				  {
+					  s2=s2+x;
+					  x=fi.get();
+
+				  }
+				  if(s2=="Ramiro")
+				  {
+					 for (int i = 1; i <=s.Length();i++) {
+					 fo.put(s[i]);
+					 }
+				  }
+				  else
+				  {
+					  for (int i = 1; i <=s2.Length();i++) {
+						 fo.put(s2[i]);
+					  }
+				  }
+				  fo.put(x);
+		 }
+	 }
+
+
+	fi.close();
+	fo.close();
+	remove(nomArch.c_str());  //eliminamos el arcivo de entrada
+	rename("temporal.tmp",nomArch.c_str());
+
+}
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+	 if(OpenTextFileDialog1->Execute())
+	 {
+		  CambiarCadena(OpenTextFileDialog1->FileName);
+	 }
+}
+//---------------------------------------------------------------------------

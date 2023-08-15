@@ -1,0 +1,195 @@
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#pragma hdrstop
+
+#include "Unit1.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.dfm"
+TForm1 *Form1;
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner)
+	: TForm(Owner)
+{
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::FormCreate(TObject *Sender)
+{
+   nomArch="alumnos.dat";
+   pf=new fstream(nomArch.c_str(),ios::in|ios::binary);
+   if(pf->fail())
+   {
+	   pf=new fstream(nomArch.c_str(),ios::out|ios::binary);
+   }
+   pf->close();
+   delete(pf);
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Edit1Exit(TObject *Sender)
+{
+	RegAlumno reg;
+	Boolean habilitar=false;
+	Word codi=StrToInt(Edit1->Text);
+	pf=new fstream(nomArch.c_str(),ios::in|ios::binary) ;
+	if(!pf->fail())
+	{
+		 while(!pf->eof()&&!habilitar)
+		 {
+			 pf->read((char *)&reg,sizeof(reg));
+			 if(!pf->eof())
+			 {
+				 habilitar=(codi==reg.codigo)&&(reg.marca==0);
+			 }
+		 }
+		 if(habilitar)
+		 {
+		   Edit2->Text=reg.nombre;
+		   Edit3->Text=reg.direccion;
+		   MaskEdit1->Text=IntToStr(reg.fecha.dia)+"/"+IntToStr(reg.fecha.mes)+"/"+IntToStr(reg.fecha.año);
+		 }
+		 else
+		 {
+			 Edit2->Text="";
+			 Edit3->Text="";
+			 MaskEdit1->Text="";
+         }
+	}
+	pf->close();
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+	RegAlumno reg,regNuevo;
+	bool hallado=false;
+	AnsiString aux;
+	regNuevo.codigo=StrToInt(Edit1->Text);
+	 aux=Edit2->Text;
+	strcpy(regNuevo.nombre,aux.c_str());
+	aux=Edit3->Text;
+	strcpy(regNuevo.direccion,aux.c_str());
+	aux=MaskEdit1->Text;
+	regNuevo.fecha.dia=StrToInt(aux.SubString(1,2));
+	regNuevo.fecha.mes=StrToInt(aux.SubString(4,2));
+	regNuevo.fecha.año=StrToInt(aux.SubString(7,4));
+	pf=new fstream(nomArch.c_str(),ios::in|ios::out|ios::binary);  //esto nos permite leer y escribir si lo utilizamos pero no ambos a la vez
+	if(!pf->fail())
+	{
+		while(!pf->eof()&&!hallado)
+		{
+			pf->read((char *)&reg,sizeof(reg));
+			if(!pf->eof())
+			{
+				hallado=(reg.codigo==regNuevo.codigo);
+			}
+		}
+		if(hallado)      //actualizar
+		{
+			pf->seekg(-sizeof(reg),ios::cur);
+			pf->write((char *)&regNuevo,sizeof(regNuevo));
+
+		}
+		else         //agregar
+		{
+		  pf=new fstream(nomArch.c_str(),ios::app|ios::binary);
+		  pf->write((char*)&regNuevo,sizeof(regNuevo));
+		}
+
+		pf->close();
+		delete(pf);
+
+
+		Edit1->Text="";
+		Edit2->Text="";
+		Edit3->Text="";
+		MaskEdit1->Text="";
+		Edit1->SetFocus();
+	}
+}
+//---------------------------------------------------------------------------
+//ojo el reestructurar solo se puede hacer una vez nada más como el pato lucas este truco solo se puede hacer una vez xd
+void __fastcall TForm1::Button3Click(TObject *Sender)
+{
+	RegAlumno reg;//new Estructura
+	RegAlumno2 reg2;//antigua Estructura
+	fstream fi(nomArch.c_str(),ios::in|ios::binary);
+	fstream fo("temporal.tmp",ios::out|ios::binary);
+	if(!fi.fail()) //hubo fallas en abrir el archivo
+	{
+		while(!fi.eof())          // llego al fin del archivo
+		{
+			fi.read((char *)&reg2,sizeof(reg2));
+			if(!fi.eof())
+			{
+				reg.codigo=reg2.codigo;
+				strcpy(reg.nombre,reg2.nombre); //reg.nombre=reg2.nombre;
+				strcpy(reg.direccion,reg2.direccion);
+				reg.fecha=reg2.fecha;
+                reg.marca=0;
+				fo.write((char *)&reg,sizeof(reg));
+			}
+		}
+	}
+	fi.close();
+	fo.close();
+	remove(nomArch.c_str());
+	rename("temporal.tmp",nomArch.c_str());
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TForm1::Button2Click(TObject *Sender)
+{
+	Boolean bandera=false;
+	RegAlumno reg;                                  //formato binary
+	fstream f(nomArch.c_str(),ios::in|ios::out|ios::binary);
+	Word codi=StrToInt(Edit1->Text);
+	if(!f.fail())
+	{
+		while(!f.eof()&& !bandera)
+		{
+			f.read((char *)&reg,sizeof(reg));
+			if(!f.eof())
+			{
+				bandera= codi==reg.codigo;
+            }
+		}
+		if(bandera)
+		{
+			reg.marca=1;          //donde esta al puntero
+			f.seekg(-sizeof(reg),ios::cur);//usamospararetroceder el
+			f.write((char *)&reg,sizeof(reg));
+			Edit1->Text="";
+			Edit2->Text="";
+			Edit3->Text="";
+			MaskEdit1->Text="";
+		}
+	}
+	f.close();
+}
+//---------------------------------------------------------------------------
+   ///menu
+void __fastcall TForm1::Porcodigo1Click(TObject *Sender)
+{
+	 RegAlumno reg;
+	 RegIdxCod regIdx;
+	 fstream fd(nomArch.c_str(),ios::in|ios::binary);
+	 fstream fi("codigo.idx",ios::out|ios::binary);
+	 if(!fd.fail())
+	 {
+		 while(!fd.eof())
+		 {
+			fd.read((char *)&reg,sizeof(reg));
+			if(!fd.eof())
+			{
+				regIdx.codigo=reg.codigo;
+				fi.write((char*)&regIdx,sizeof(regIdx));
+            }
+         }
+	 }
+	 fd.close();
+	 fi.close();
+
+}
+//---------------------------------------------------------------------------
+

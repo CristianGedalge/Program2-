@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2019/09/16 19:52:20.000.005,=C:\Users\Estudiante\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2019/09/16 19:52:20.000.016,=C:\Users\Estudiante\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2019/11/19 13:54:43.000.248,=C:\Users\Estudiante\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2019/11/19 13:54:43.000.176,=C:\Users\Estudiante\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2023/06/22 09:17:21.000.189,=C:\Users\Estudiante\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2023/06/22 09:17:22.000.813,=C:\Users\Estudiante\Documents\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2023/06/22 09:39:41.000.633,C:\Users\Estudiante\Documents\Embarcadero\Studio\Projects\Unit1.cpp=F:\Program 2\unit1.cpp</Transaction>
+    <Transaction>2023/06/22 09:39:41.000.633,C:\Users\Estudiante\Documents\Embarcadero\Studio\Projects\Unit1.h=F:\Program 2\unit1.h</Transaction>
+    <Transaction>2023/06/22 09:39:41.000.633,C:\Users\Estudiante\Documents\Embarcadero\Studio\Projects\Unit1.dfm=F:\Program 2\unit1.dfm</Transaction>
+    <Transaction>2023/06/22 09:39:45.000.512,C:\Users\Estudiante\Documents\Embarcadero\Studio\Projects\Project1PCH1.h=F:\Program 2\Project1PCH1.h</Transaction>
+    <Transaction>2023/06/22 09:39:52.000.633,F:\Program 2\Project1PCH1.h=F:\Program 2\archi2PCH1.h</Transaction>
+    <Transaction>2023/06/22 09:39:52.000.794,C:\Users\Estudiante\Documents\Embarcadero\Studio\Projects\Project1.cbproj=F:\Program 2\archi2.cbproj</Transaction>
+  </Transactions>
+</BorlandProject>
