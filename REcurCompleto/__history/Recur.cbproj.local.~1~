@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2023/04/25 16:07:15.000.635,=C:\Users\Usuario\Documentos\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>2023/04/25 16:07:19.000.736,=C:\Users\Usuario\Documentos\Embarcadero\Studio\Projects\Unit1.cpp</Transaction>
+    <Transaction>2023/04/25 18:47:56.000.518,C:\Users\Usuario\Documentos\Embarcadero\Studio\Projects\Project1PCH1.h=C:\Users\Usuario\Documentos\Embarcadero\Studio\Projects\RecurPCH1.h</Transaction>
+    <Transaction>2023/04/25 18:47:56.000.532,C:\Users\Usuario\Documentos\Embarcadero\Studio\Projects\Project1.cbproj=C:\Users\Usuario\Documentos\Embarcadero\Studio\Projects\Recur.cbproj</Transaction>
+    <Transaction>2023/04/25 18:48:15.000.652,C:\Users\Usuario\Documentos\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\Usuario\Documentos\Embarcadero\Studio\Projects\Recur1.dfm</Transaction>
+    <Transaction>2023/04/25 18:48:15.000.652,C:\Users\Usuario\Documentos\Embarcadero\Studio\Projects\Unit1.h=C:\Users\Usuario\Documentos\Embarcadero\Studio\Projects\Recur1.h</Transaction>
+    <Transaction>2023/04/25 18:48:15.000.652,C:\Users\Usuario\Documentos\Embarcadero\Studio\Projects\Unit1.cpp=C:\Users\Usuario\Documentos\Embarcadero\Studio\Projects\Recur1.cpp</Transaction>
+    <Transaction>2023/04/25 18:48:49.000.351,C:\Users\Usuario\Documentos\Embarcadero\Studio\Projects\Recur1.cpp=D:\Programacion2\REcurNew\Recur1.cpp</Transaction>
+    <Transaction>2023/04/25 18:48:49.000.351,C:\Users\Usuario\Documentos\Embarcadero\Studio\Projects\Recur1.dfm=D:\Programacion2\REcurNew\Recur1.dfm</Transaction>
+    <Transaction>2023/04/25 18:48:49.000.351,C:\Users\Usuario\Documentos\Embarcadero\Studio\Projects\Recur1.h=D:\Programacion2\REcurNew\Recur1.h</Transaction>
+    <Transaction>2023/04/25 18:48:51.000.531,C:\Users\Usuario\Documentos\Embarcadero\Studio\Projects\RecurPCH1.h=D:\Programacion2\REcurNew\RecurPCH1.h</Transaction>
+    <Transaction>2023/04/25 18:48:53.000.527,C:\Users\Usuario\Documentos\Embarcadero\Studio\Projects\Recur.cbproj=D:\Programacion2\REcurNew\Recur.cbproj</Transaction>
+  </Transactions>
+</BorlandProject>
